@@ -8,12 +8,23 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <div>
-        <Head>
+     <Head>
           <title>Board App - Organize your tasks</title>
         </Head>
-        <h1 className={styles.title}>Hello World</h1>
-      </div>
+      <main className={styles.contentContainer}>
+          <img src="/images/board-user.svg" alt="Board Tool" />
+          <section className={styles.callToAction}>
+            <h1>A too for your day plan and organize your day</h1>
+            <p>
+              <span>100% Gratuita</span>
+              e online.
+            </p>
+          </section>
+
+          <div className={styles.donaters}>
+            <img src="https://sujeitoprogramador.com/steve.png" alt="" />
+          </div>
+      </main>
     </>
   )
 }

@@ -15,10 +15,10 @@ export function SignInButton() {
         <button
         type='button'
         className={styles.signInButton}>
-            <img src="" alt="" />
+            <img src="https://sujeitoprogramador.com/steve.png" alt="" />
             Ola
             <FiX color='#737380' className={styles.closeIcon}/>
-            SignIn with github
+            
         </button>
     ) : (
         <button
