@@ -28,27 +28,30 @@ export default function Board(){
             <h1>Voce tem 2 tarefas!</h1>
 
             <section>
-                <article>
-                    <p>Aprender a criar projetos usando Next JS e aplicando firebase como back end.</p>
+            <article className={styles.taskList}>
+                
+                <p>Aprender a criar projetos usando NextJS</p>
+              
+                <div className={styles.actions}>
+                <div>
                     <div>
-                        <div>
-                            <div>
-                                <FiCalendar size={20} color="#FFb800" />
-                                <time>17 Julho 2022</time>
-                            </div>
-                            <button>
-                                <FiEdit2 size={20} color="#FFF" />
-                                <span>Editar</span>
-                            </button>
-                        </div>
-
-                        <button>
-                            <FiTrash size={20} color="#FF3636" />
-                            <span>Excluir</span>
-                        </button>
-
+                    <FiCalendar size={20} color="#FFB800"/>
+                    <time>17 de Julho de 2022</time>
                     </div>
-                </article>
+                
+                    <button >
+                        <FiEdit2 size={20} color="#FFF" />
+                        <span>Editar</span>
+                    </button>
+                
+                </div>
+
+                <button>
+                    <FiTrash size={20} color="#FF3636" />
+                    <span>Excluir</span>
+                </button>
+                </div>
+            </article>
             </section>
         </main>
        
