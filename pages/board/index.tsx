@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { FiPlus, FiCalendar, FiEdit2, FiTrash, FiClock, FiX } from 'react-icons/fi'
-
+import { SupportButton } from '../../components/SupportButton'
 
 import styles from './styles.module.scss'
 
@@ -54,7 +54,17 @@ export default function Board(){
             </article>
             </section>
         </main>
-       
+
+        <div className={styles.vipContainer}>
+            <h3>Obrigado por apoiar esse projeto.</h3>
+            <div>
+                <FiClock size={28} color="#FFF" />
+                <time>
+                    Última doação foi a 3 dias
+                </time>
+            </div>
+        </div>
+        <SupportButton />
        </>
     )
 }
