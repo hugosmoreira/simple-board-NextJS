@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import { FaGithub } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
  
-import { signIn, signOut, useSession} from 'next-auth/react';
+import { signIn, signOut, useSession} from 'next-auth/client';
 
 
 
