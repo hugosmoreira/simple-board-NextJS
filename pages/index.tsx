@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/styles.module.scss'
+import { GetStaticProps } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,4 +28,25 @@ export default function Home() {
           </main>
     </>
   )
+}
+
+
+export const getStaticProps: GetStaticProps = async () => {
+
+  // const donaters = await firebase.firestore().collection('users').get();
+
+  // const data = JSON.stringify(donaters.docs.map( u => {
+  //   return{
+  //     id: u.id,
+  //     ...u.data(),
+  //   }
+  // }))
+
+  return{
+    props: {
+      //data
+    },
+    revalidate: 60 * 60 // Atualiza a cada 60 minutos.
+  }
+
 }

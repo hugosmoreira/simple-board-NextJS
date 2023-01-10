@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { FiPlus, FiCalendar, FiEdit2, FiTrash, FiClock, FiX } from 'react-icons/fi'
 import { SupportButton } from '../../components/SupportButton'
-
+import { GetServerSideProps } from 'next'
+import { getSession } from 'next-auth/client'
 import styles from './styles.module.scss'
 
 
@@ -68,3 +69,47 @@ export default function Board(){
        </>
     )
 }
+
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+    const session = await getSession({ req });
+  
+    if(!session?.id){
+      //Se o user nao tiver logado vamos redirecionar.
+      return{
+        redirect:{
+          destination: '/',
+          permanent: false
+        }
+      }
+    }
+  
+    // const tasks = await firebase.firestore().collection('tarefas')
+    // .where('userId', '==', session?.id)
+    // .orderBy('created', 'asc').get();
+  
+    // const data = JSON.stringify(tasks.docs.map( u => {
+    //   return {
+    //     id: u.id,
+    //     createdFormated: format(u.data().created.toDate(), 'dd MMMM yyyy'),
+    //     ...u.data(),
+    //   }
+    // }))
+  
+    const user = {
+    //   nome: session?.user.name,
+      id: session?.id,
+      vip: session?.vip,
+      lastDonate: session?.lastDonate
+    }
+  
+  
+    return{
+      props:{
+        // user,
+        // data
+      }
+    }
+  
+  }
+  
